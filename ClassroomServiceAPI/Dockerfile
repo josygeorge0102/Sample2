@@ -8,7 +8,7 @@ COPY ["OnlineEducationSystem/ClassroomService/ClassroomServiceAPI/ClassroomServi
 RUN dotnet restore "ClassroomServiceAPI.csproj"
 
 # Copy everything else (except stuf  in .dockerignore) and build
-COPY . .
+COPY OnlineEducationSystem/ClassroomService/ClassroomServiceAPI/ .
 RUN dotnet tool install --global dotnet-ef
 ENV PATH $PATH:/root/.dotnet/tools
 # RUN dotnet ef database update
