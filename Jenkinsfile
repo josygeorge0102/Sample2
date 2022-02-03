@@ -3,6 +3,6 @@ node{
         git 'https://github.com/josygeorge0102/Sample.git'
     }
     stage('Build Docker Image'){
-       sh 'docker build -t josy98/classroomserviceapi:v1 .'
+       sh 'docker-compose up'
     }
 }
