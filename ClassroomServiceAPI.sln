@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassroomServiceAPI", "ClassroomServiceAPI\ClassroomServiceAPI.csproj", "{28571E84-1161-401A-9D30-8A0950FA9EA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28571E84-1161-401A-9D30-8A0950FA9EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28571E84-1161-401A-9D30-8A0950FA9EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28571E84-1161-401A-9D30-8A0950FA9EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28571E84-1161-401A-9D30-8A0950FA9EA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33CD4394-997D-4AEB-B1EF-773664B12B1F}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassroomServiceAPI</name>
+    </assembly>
+    <members>
+        <member name="M:ClassroomServiceAPI.Controllers.ClassroomsController.GetClassroomByIdForTeacher(System.Int32,System.Int32)">
+            classrooms/teachers/{teacherId}/classrooms
+        </member>
+    </members>
+</doc>

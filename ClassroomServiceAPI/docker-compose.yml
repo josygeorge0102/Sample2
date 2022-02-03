@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  classroomservicedb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    user: root
+    volumes:
+      - classroomservice-sql-server-data:/var/opt/mssql/data
+    environment:
+       ACCEPT_EULA: "Y"
+       SA_PASSWORD: "Pa55word!"
+       MSSQL_PID: "Express"
+    ports:
+      - "1433:1433"
+
+  classroomserviceapi:
+    image: classroomserviceapi
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: "7189"
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ConnectionStrings__ClassroomServiceDB: "Server=classroomservicedb,1433;Database=ClassroomServiceDB;User ID=SA;Password=Pa55word!;MultipleActiveResultSets=true;"
+    volumes:
+      - $APPDATA\microsoft\UserSecrets\:/root/.microsoft/usersecrets
+      - $USERPROFILE\.aspnet\https\:/root/.aspnet/https/
+    ports:
+      - 5189:80
+      - 7189:443
+    depends_on:
+      - classroomservicedb
+    
+volumes:
+  classroomservice-sql-server-data: {}
