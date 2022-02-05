@@ -1,6 +1,11 @@
 node{
 
- 
+  agent any
+  environment{
+      registryName="OESRegistry"
+      registryUrl="oesregistry.azurecr.io"
+      registryCredential="ACR"
+   }
   stage('SCM Checkout'){
     git 'https://github.com/josygeorge0102/Sample2.git'
   }
@@ -8,8 +13,9 @@ node{
   
   stage('Docker compose push'){
      script{
-        bat 'docker login oesregistry.azurecr.io -u OESRegistry -p EWdqcMQEOfw8NbUGFm7=3eO5=U94c5M4'
+      docker.withRegistry("http://${registryUrl}",registryCredential){
         bat 'docker-compose push'
+      }
      }
    } 
       
