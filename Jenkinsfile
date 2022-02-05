@@ -9,7 +9,7 @@ pipeline {
 
         stage ('SCM Checkout') {
              steps{
-                   git 'https://github.com/josygeorge0102/Sample2.git'
+                   git credentialsId: '1685bc3f-c82f-441d-a812-0f287757f7c8', url: 'https://github.com/josygeorge0102/Sample2.git'
              }        
         }
     
