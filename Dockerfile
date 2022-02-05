@@ -4,11 +4,11 @@ WORKDIR /app
 # ENV ConnectionStrings__ClassroomServiceDB "Server=classroomservicedb,1433;Database=ClassroomServiceDB;User Id=sa;Password=Pa55word!;MultipleActiveResultSets=true"
 
 # Copy csproj and add as distinct layers
-COPY ["ClassroomServiceAPI/ClassroomServiceAPI.csproj", "./"]
+COPY ["ClassroomServiceAPI.csproj", "./"]
 RUN dotnet restore "ClassroomServiceAPI.csproj" --disable-parallel
 
 # Copy everything else (except stuf  in .dockerignore) and build
-COPY ClassroomServiceAPI/ .
+COPY . .
 RUN dotnet tool install --global dotnet-ef
 ENV PATH $PATH:/root/.dotnet/tools
 # RUN dotnet ef database update
