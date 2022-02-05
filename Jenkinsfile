@@ -8,9 +8,9 @@ pipeline {
     stages {
 
         stage ('SCM Checkout') {
-           
-            git 'https://github.com/josygeorge0102/Sample2.git'
-            
+             steps{
+                   git 'https://github.com/josygeorge0102/Sample2.git'
+             }        
         }
     
         
