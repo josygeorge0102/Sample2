@@ -12,12 +12,11 @@ node{
  
   
   stage('Docker compose push'){
-     script{
-        docker.withRegistry("http://${registryUrl}",registryCredential){
-        docker-compose push
+     withCredentials([usernamePassword(credentialsId: 'ACR', passwordVariable: 'ACR_PASSWORD', usernameVariable: 'ACR_USER')]){
+        bat 'docker login oesregistry.azurecr.io -u $ACR_USER -p $ACR_PASSWORD 
+        bat'docker-compose push'
       }
      }
-   } 
       
 }
   
