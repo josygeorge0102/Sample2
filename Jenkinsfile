@@ -9,7 +9,7 @@ pipeline {
 
         stage ('SCM Checkout') {
             steps {
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/josygeorge0102/Sample2.git']]])
+            git 'https://github.com/josygeorge0102/Sample2.git'
             }
         }
     
