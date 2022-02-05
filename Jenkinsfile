@@ -1,6 +1,6 @@
 import jenkins.model.*
 jenkins = Jenkins.instance
-node{
+pipeline{
   agent any  
   stage('SCM Checkout'){
     git 'https://github.com/josygeorge0102/Sample2.git'
