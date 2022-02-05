@@ -2,7 +2,7 @@ node{
 
  
   stage('SCM Checkout'){
-    git 'https://github.com/josygeorge0102/OnlineEducationSystem.git'
+    git 'https://github.com/josygeorge0102/Sample2.git'
   }
  
   
