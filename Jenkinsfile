@@ -13,8 +13,8 @@ node{
   
   stage('Docker compose push'){
      script{
-      docker.withRegistry("http://${registryUrl}",registryCredential){
-        bat 'docker-compose push'
+        docker.withRegistry("http://${registryUrl}",registryCredential){
+        docker-compose push
       }
      }
    } 
